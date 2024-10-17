@@ -25,6 +25,8 @@
                             <th class="p-3">Action</th>
                         </tr>
 
+
+                        
                         </x-slot>
                         @foreach ($Rombels as $rombel)
                             <tr class="border-b">

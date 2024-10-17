@@ -29,8 +29,16 @@ class RombelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request-> validate([
+        'name' => 'required'
+        ]);
+        $rombels= new Rombel();
+        $rombels-> name = $request->name;
+        $rombels -> save();
+
+        return redirect()->route('rombel.index');
     }
+
 
     /**
      * Display the specified resource.
