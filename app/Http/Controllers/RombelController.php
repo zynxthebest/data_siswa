@@ -21,7 +21,7 @@ class RombelController extends Controller
      */
     public function create()
     {
-        //
+        return view('rombel.create');
     }
 
     /**
