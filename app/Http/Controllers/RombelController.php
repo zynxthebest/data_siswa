@@ -62,7 +62,14 @@ class RombelController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request-> validate([
+            'name' => 'required'
+            ]);
+            $rombels= Rombel:: find ( $id );
+            $rombels-> name = $request->name;
+            $rombels -> save();
+    
+            return redirect()->route('rombel.index'); 
     }
 
     /**

@@ -24,7 +24,7 @@
                             <th class="p-3">nama</th>
                             <th class="p-3">Action</th>
                         </tr>
-                           
+                        </x-slot>
                             @foreach ($Rombels as $rombel)
                             <tr class="border-b">
                                <td class="p-3">{{$loop->iteration}}</td>
@@ -36,15 +36,7 @@
                         @endforeach
                         
 
-                        
-                        </x-slot>
-                        @foreach ($Rombels as $rombel)
-                            <tr class="border-b">
-                               <td class="p-3">{{$loop->iteration}}</td>
-                               <td class="p-3">{{$rombel->name}}</td>
-                               <td class="p-3"></td>
-                            </tr>
-                        @endforeach
+
                     </x-table>
                 </div>
             </div>
