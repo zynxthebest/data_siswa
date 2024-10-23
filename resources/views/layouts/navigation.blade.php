@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('rombel.index')" :active="request()->routeIs('rombel.*')">
                         Rombel
                     </x-nav-link>
+                    <x-nav-link :href="route('student.index')" :active="request()->routeIs('student.*')">
+                        Student
+                    </x-nav-link>
                 </div>
             </div>
 
