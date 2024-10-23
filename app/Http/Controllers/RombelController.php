@@ -77,6 +77,9 @@ class RombelController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $rombel= Rombel::find($id);
+        $rombel->delete();
+
+        return redirect()->route('rombel.index');
     }
 }

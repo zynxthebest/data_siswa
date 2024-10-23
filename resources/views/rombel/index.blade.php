@@ -28,10 +28,20 @@
                             @foreach ($Rombels as $rombel)
                             <tr class="border-b">
                                <td class="p-3">{{$loop->iteration}}</td>
-                               <td class="p-3">{{$rombel->name}}</td>
+                               <td class="p-3">{{$rombel->name}}
+                                
+                               </td>
                                <td class="p-3"><a href="{{route('rombel.edit', $rombel->id)}}">
                                 <x-secondary-button class="mb-2">ambadit</x-secondary-button>
-                               </a></td>
+                               </a>
+                               <form method="post" action="{{ route('rombel.destroy', $rombel->id) }}" class="ms-2 inline">
+                                @csrf
+                                @method('DELETE')
+                                <x-primary-button>
+                                    ambapus
+                                </x-primary-button>
+                            </form>
+                            </td>
                             </tr>
                         @endforeach
                         
