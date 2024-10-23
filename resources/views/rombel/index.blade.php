@@ -24,7 +24,17 @@
                             <th class="p-3">nama</th>
                             <th class="p-3">Action</th>
                         </tr>
-
+                           
+                            @foreach ($Rombels as $rombel)
+                            <tr class="border-b">
+                               <td class="p-3">{{$loop->iteration}}</td>
+                               <td class="p-3">{{$rombel->name}}</td>
+                               <td class="p-3"><a href="{{route('rombel.edit', $rombel->id)}}">
+                                <x-secondary-button class="mb-2">ambadit</x-secondary-button>
+                               </a></td>
+                            </tr>
+                        @endforeach
+                        
 
                         
                         </x-slot>

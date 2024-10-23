@@ -53,7 +53,8 @@ class RombelController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $rombel = Rombel::find($id);
+        return view('rombel.edit', compact('rombel'));
     }
 
     /**
