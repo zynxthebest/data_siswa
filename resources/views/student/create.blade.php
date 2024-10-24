@@ -28,6 +28,14 @@
               </select>
                 <x-input-error class="mt-2" :messages="$errors->get('rombel_id')" />
             </div>
+            <div>
+                <x-input-label for="gender" value="gender"/>
+                    <select name="gender" id="gender">
+                        <option value="B">Lanang</option>
+                        <option value="G">Wadon</option>
+                    </select>
+
+            </div>
             <x-primary-button>
                 simpan
             </x-primary-button>

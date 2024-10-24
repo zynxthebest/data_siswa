@@ -16,13 +16,14 @@
                         <x-secondary-button class="mb-2 p-3">
                         ambambah
                         </x-secondary-button>
-                    </a>  
+                    </a>
                     <x-table>
                         <x-slot:thead>
                         <tr>
                             <th class="p-3">no</th>
                             <th class="p-3">nis</th>
                             <th class="p-3">nama</th>
+                            <th class="p-3">Gender</th>
                             <th class="p-3">Rombel Name</th>
                             <th class="p-3">Action</th>
                         </tr>
@@ -32,8 +33,9 @@
                                <td class="p-3">{{$loop->iteration}}</td>
                                <td class="p-3">{{$student->nis}}
                                <td class="p-3">{{$student->name}}
+                               <td class="p-3">{{$student->gender == "B" ? "Lanang" : "Wadon"}}
                                 <td class="p-3">{{$student->rombel->name}}
-                                
+
                                </td>
                                <td class="p-3"><a href="{{route('student.edit', $student->id)}}">
                                 <x-secondary-button class="mb-2">ambadit</x-secondary-button>
@@ -48,7 +50,7 @@
                             </td>
                             </tr>
                         @endforeach
-                        
+
 
 
                     </x-table>

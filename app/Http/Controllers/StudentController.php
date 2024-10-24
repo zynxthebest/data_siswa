@@ -37,6 +37,7 @@ class studentController extends Controller
         $student= new student();
         $student-> nis = $request->nis;
         $student-> name = $request->name;
+        $student -> gender= $request->gender;
         $student->rombel_id = $request->rombel_id;
         $student -> save();
 
@@ -74,8 +75,8 @@ class studentController extends Controller
             $student-> name = $request->name;
             $student->rombel_id = $request -> rombel_id;
             $student-> save();
-    
-            return redirect()->route('student.index'); 
+
+            return redirect()->route('student.index');
     }
 
     /**
