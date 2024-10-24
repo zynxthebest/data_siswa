@@ -20,6 +20,15 @@
                 <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" value="{{$student->name}}" />
                 <x-input-error class="mt-2" :messages="$errors->get('name')" />
             </div>
+            <div>
+                <x-input-label for="rombel" value="Rombel" />
+              <select name="rombel_id" id="rombel">
+                @foreach ($rombels as $r)
+                    <option {{ $r->id == $student->rombel_id ? "selected" : ""}} value="{{$r->id}}">{{$r->name}}</option>
+                @endforeach
+              </select>
+                <x-input-error class="mt-2" :messages="$errors->get('rombel_id')" />
+            </div>
             <x-primary-button>
                 simpan
             </x-primary-button>

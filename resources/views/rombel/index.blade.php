@@ -21,7 +21,7 @@
                         <x-slot:thead>
                         <tr>
                             <th class="p-3">no</th>
-                            <th class="p-3">nama</th>
+                            <th class="p-3">Kelas</th>
                             <th class="p-3">Action</th>
                         </tr>
                         </x-slot>

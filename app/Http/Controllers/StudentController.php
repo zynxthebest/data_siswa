@@ -34,11 +34,11 @@ class studentController extends Controller
         $request-> validate([
         'name' => 'required'
         ]);
-        $students= new student();
-        $students-> nis = $request->nis;
-        $students-> name = $request->name;
-        $students->rombel_id = $request->rombel_id;
-        $students -> save();
+        $student= new student();
+        $student-> nis = $request->nis;
+        $student-> name = $request->name;
+        $student->rombel_id = $request->rombel_id;
+        $student -> save();
 
         return redirect()->route('student.index');
     }
@@ -58,7 +58,8 @@ class studentController extends Controller
     public function edit(string $id)
     {
         $student = student::find($id);
-        return view('student.edit', compact('student'));
+        $rombels = rombel :: all ();
+        return view('student.edit', compact('student' , 'rombels'));
     }
 
     /**
@@ -69,9 +70,10 @@ class studentController extends Controller
         $request-> validate([
             'name' => 'required'
             ]);
-            $students= student:: find ( $id );
-            $students-> name = $request->name;
-            $students -> save();
+            $student = student:: find ( $id );
+            $student-> name = $request->name;
+            $student->rombel_id = $request -> rombel_id;
+            $student-> save();
     
             return redirect()->route('student.index'); 
     }
