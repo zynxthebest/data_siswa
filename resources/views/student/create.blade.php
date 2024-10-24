@@ -4,6 +4,8 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Tambah Data') }}
         </h2>
+
+        <x-primary-button class="inline p-3"><a href="./">HOME</a></x-primary-button>
     </x-slot>
     <x-content>
         <form method="post" action="{{ route('student.store') }}" class="mt-6 space-y-6">
