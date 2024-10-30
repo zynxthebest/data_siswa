@@ -16,10 +16,10 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     <x-nav-link :href="route('rombel.index')" :active="request()->routeIs('rombel.*')">
-                        Rombel
+                        Ambambel
                     </x-nav-link>
                     <x-nav-link :href="route('student.index')" :active="request()->routeIs('student.*')">
-                        Student
+                        PopMurid😫
                     </x-nav-link>
                 </div>
             </div>
@@ -72,9 +72,15 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
+        <div class="pt-2 pb-3 ">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+                <x-nav-link :href="route('rombel.index')" :active="request()->routeIs('rombel.*')">
+                    Ambambel
+                </x-nav-link>
+                <x-nav-link :href="route('student.index')" :active="request()->routeIs('student.*')">
+                    PopMurid
+                </x-nav-link>
             </x-responsive-nav-link>
         </div>
 
