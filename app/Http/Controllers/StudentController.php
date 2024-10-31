@@ -23,7 +23,8 @@ class studentController extends Controller
     public function create()
     {
         $rombels = rombel::all();
-        return view('student.create', compact('rombels'));
+        $lastNIS = student::latest('id')->first()->nis;
+        return view('student.create', compact('rombels', 'lastNIS'));
     }
 
     /**

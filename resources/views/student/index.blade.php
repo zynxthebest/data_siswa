@@ -34,7 +34,7 @@
                                <td class="p-3">{{$student->nis}}
                                <td class="p-3">{{$student->name}}
                                <td class="p-3">{{$student->gender == "B" ? "Lanang" : "Wadon"}}
-                                <td class="p-3">{{$student->rombel->name}}
+                                <td class="p-3">{{$student->rombel->name ?? "kelasnya ilang jir"}}
 
                                </td>
                                <td class="p-3"><a href="{{route('student.edit', $student->id)}}">

@@ -4,7 +4,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Tambah Data') }}
         </h2>
-        <x-primary-button >HOME</x-primary-button>
+        <a href="./"><x-primary-button class="p-3">ambahome</x-primary-button></a>
     </x-slot>
     <x-content>
         <form method="post" action="{{ route('student.store') }}" class="mt-6 space-y-6">
@@ -12,7 +12,7 @@
 
             <div>
                 <x-input-label for="nis" value="NIS" />
-                <x-text-input id="nis" name="nis" type="text" class="mt-1 block w-full" value="{{old ('nis')}}" />
+                <x-text-input id="nis" name="nis" type="text" class="mt-1 block w-full" value="{{ strval(substr($lastNIS, 0, strlen($lastNIS)- 1)) .(substr($lastNIS, strlen($lastNIS)- 1) + 1) }}" />
                 <x-input-error class="mt-2" :messages="$errors->get('nis')" />
             </div>
             <div>
