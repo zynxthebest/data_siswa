@@ -33,13 +33,23 @@ class studentController extends Controller
     public function store(Request $request)
     {
         $request-> validate([
-        'name' => 'required'
+            'name' => 'required',
+            'nis' => 'required',
+            'gender' => 'required',
+            'rombel_id' => 'required',
+            'photo'=> 'nullable|image|mime:jpg,png|max:1024',
         ]);
+        $photo = ' ';
+        if($request->hasFile('photo')){
+            $namafile = time().'_'. $request->file('photo')->getClientOriginalName();
+            $photo = $request->file('photo')->storeAs('students', $namafile,'public');
+        }
         $student= new student();
         $student-> nis = $request->nis;
         $student-> name = $request->name;
         $student -> gender= $request->gender;
         $student->rombel_id = $request->rombel_id;
+        $student->photo = $photo;
         $student -> save();
 
         return redirect()->route('student.index');

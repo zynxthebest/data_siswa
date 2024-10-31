@@ -8,7 +8,15 @@
     </x-slot>
     <x-content>
         <form method="post" action="{{ route('student.store') }}" class="mt-6 space-y-6">
+                enctype="multipart/form-data"
+
+
             @csrf
+            <div>
+                <x-input-label for="photo" value="photo_siswa" />
+                <x-text-input id="photo" name="photo" type="file" class="mt-1 block w-full" value="{{ old ('photo')}}" />
+                <x-input-error class="mt-2" :messages="$errors->get('photo')" />
+            </div>
 
             <div>
                 <x-input-label for="nis" value="NIS" />
