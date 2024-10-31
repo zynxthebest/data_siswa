@@ -20,7 +20,9 @@
                     <x-table>
                         <x-slot:thead>
                         <tr>
+
                             <th class="p-3">no</th>
+                            <th class="p-3">Photo Siswa</th>
                             <th class="p-3">nis</th>
                             <th class="p-3">nama</th>
                             <th class="p-3">Gender</th>
@@ -31,6 +33,13 @@
                             @foreach ($students as $student)
                             <tr class="border-b">
                                <td class="p-3">{{$loop->iteration}}</td>
+                               <td class="p-3">
+                                @if($student
+                                 -> photo)
+                                <img class="rounded-full" src="{{ asset ('/storage/'.$student->photo) }}" width="80" alt="Ambambar">
+
+                                @endif
+                               </td>
                                <td class="p-3">{{$student->nis}}
                                <td class="p-3">{{$student->name}}
                                <td class="p-3">{{$student->gender == "B" ? "Lanang" : "Wadon"}}

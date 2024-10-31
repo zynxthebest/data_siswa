@@ -23,7 +23,7 @@ class studentController extends Controller
     public function create()
     {
         $rombels = rombel::all();
-        $lastNIS = student::latest('id')->first()->nis;
+        $lastNIS = student::latest('id')->first()->nis ?? null;
         return view('student.create', compact('rombels', 'lastNIS'));
     }
 
@@ -37,7 +37,7 @@ class studentController extends Controller
             'nis' => 'required',
             'gender' => 'required',
             'rombel_id' => 'required',
-            'photo'=> 'nullable|image|mime:jpg,png|max:1024',
+            'photo'=> 'nullable|image|mimes:jpg,png|max:1024',
         ]);
         $photo = ' ';
         if($request->hasFile('photo')){
