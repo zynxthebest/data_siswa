@@ -4,7 +4,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RombelController;
 use App\Http\Controllers\studentController;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\StudentExport;
 
+Route::get('/export-students', function () {
+    return Excel::download(new StudentExport, 'students.xlsx');
+});
 Route::get('/', function () {
     return view('welcome');
 });

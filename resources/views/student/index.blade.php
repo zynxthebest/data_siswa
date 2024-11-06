@@ -17,6 +17,12 @@
                         ambambah
                         </x-secondary-button>
                     </a>
+                    <a  href="{{ url('/export-students') }}">
+                        <x-secondary-button class="mb-2 p-3">
+                        ambaport
+                        </x-secondary-button>
+                    </a>
+
                     <x-table>
                         <x-slot:thead>
                         <tr>
