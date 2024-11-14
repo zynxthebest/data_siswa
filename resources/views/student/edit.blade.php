@@ -4,6 +4,7 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Edit Kelas') }}
         </h2>
+        <a href="../"><x-primary-button class="p-3">ambahome</x-primary-button></a>
     </x-slot>
     <x-content>
         <form method="post" action="{{ route('student.update', $student->id) }}" class="mt-6 space-y-6">

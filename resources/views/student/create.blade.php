@@ -18,6 +18,8 @@
                 <x-input-error class="mt-2" :messages="$errors->get('photo')" />
             </div>
 
+            
+
             <div>
                 <x-input-label for="nis" value="NIS" />
                 <x-text-input id="nis" name="nis" type="text" class="mt-1 block w-full" value="{{ old('nis') }}" />

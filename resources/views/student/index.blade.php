@@ -22,6 +22,13 @@
                         ambaport
                         </x-secondary-button>
                     </a>
+                    <form action="{{ route('student.import.post') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <label for="file">Pilih File Excel:</label>
+                        <input type="file" name="file" id="file" required>
+                        <x-secondary-button type="submit">Importmba</x-secondary-button>
+                    </form>
+
 
                     <x-table>
                         <x-slot:thead>
